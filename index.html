@@ -3,254 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }} - {{ page.title }}</title>
-    <meta name="description" content="{{ page.description | default: site.description }}">
-    <style>
-        :root {
-            --tabloid-red: #E31E24;
-            --tabloid-yellow: #FFD700;
-            --tabloid-black: #1a1a1a;
-            --tabloid-gray: #f5f5f5;
-            --tabloid-dark-red: #b01419;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #fff;
-            color: var(--tabloid-black);
-            line-height: 1.6;
-        }
-
-        /* Masthead */
-        .masthead {
-            background: linear-gradient(135deg, var(--tabloid-red) 0%, var(--tabloid-dark-red) 100%);
-            padding: 1.5rem 1rem;
-            text-align: center;
-            border-bottom: 5px solid var(--tabloid-yellow);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .logo {
-            font-family: Impact, 'Arial Black', sans-serif;
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            color: white;
-            text-shadow: 4px 4px 0 var(--tabloid-black),
-                         -2px -2px 0 var(--tabloid-yellow);
-            letter-spacing: 2px;
-            margin: 0;
-            transform: skewY(-2deg);
-        }
-
-        .edition-info {
-            color: white;
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-            font-weight: bold;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        /* Front Page Grid */
-        .front-page {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2rem;
-            padding: 2rem 0;
-        }
-
-        /* Hero Story */
-        .hero-story {
-            background: white;
-            border: 3px solid var(--tabloid-black);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-bottom: 3px solid var(--tabloid-red);
-        }
-
-        .hero-content {
-            padding: 1.5rem;
-        }
-
-        .headline-main {
-            font-family: 'Arial Black', sans-serif;
-            font-size: clamp(1.5rem, 4vw, 2.8rem);
-            line-height: 1.1;
-            text-transform: uppercase;
-            margin: 1rem 0;
-            color: var(--tabloid-black);
-        }
-
-        .headline-main-red {
-            color: var(--tabloid-red);
-        }
-
-        .lead {
-            font-size: 1.1rem;
-            margin: 1rem 0;
-            font-weight: bold;
-        }
-
-        /* Badges */
-        .badge {
-            background: var(--tabloid-yellow);
-            color: var(--tabloid-black);
-            padding: 0.4rem 1rem;
-            font-weight: bold;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            display: inline-block;
-            transform: rotate(-2deg);
-            box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
-            border: 2px solid var(--tabloid-black);
-            margin: 0.5rem 0;
-        }
-
-        .badge-red {
-            background: var(--tabloid-red);
-            color: white;
-        }
-
-        /* Article Cards */
-        .article-card {
-            background: white;
-            border: 2px solid var(--tabloid-black);
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-            transition: transform 0.2s;
-        }
-
-        .article-card:hover {
-            transform: translateX(5px);
-            box-shadow: -5px 5px 0 var(--tabloid-yellow);
-        }
-
-        .article-card.breaking {
-            border-color: var(--tabloid-red);
-            border-width: 3px;
-            background: #fff9f0;
-        }
-
-        .headline {
-            font-family: 'Arial Black', sans-serif;
-            font-size: 1.2rem;
-            line-height: 1.2;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-            color: var(--tabloid-black);
-        }
-
-        .article-card.breaking .headline {
-            color: var(--tabloid-red);
-        }
-
-        .article-lead {
-            font-size: 0.95rem;
-            color: #444;
-            margin-top: 0.5rem;
-        }
-
-        /* Sidebar */
-        .sidebar-stories {
-            background: var(--tabloid-gray);
-            padding: 1.5rem;
-            border: 3px solid var(--tabloid-black);
-        }
-
-        .sidebar-title {
-            font-family: 'Arial Black', sans-serif;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            color: var(--tabloid-red);
-            border-bottom: 3px solid var(--tabloid-black);
-            padding-bottom: 0.5rem;
-        }
-
-        /* Secondary Stories */
-        .secondary-stories {
-            grid-column: 1 / 3;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--tabloid-black);
-            color: white;
-            padding: 2rem 0;
-            margin-top: 3rem;
-            text-align: center;
-        }
-
-        .footer-disclaimer {
-            font-size: 0.85rem;
-            opacity: 0.8;
-            margin-top: 1rem;
-        }
-
-        /* Breaking News Ticker */
-        .breaking-ticker {
-            background: var(--tabloid-red);
-            color: white;
-            padding: 0.5rem 0;
-            overflow: hidden;
-        }
-
-        .ticker-content {
-            display: flex;
-            animation: scroll 30s linear infinite;
-            white-space: nowrap;
-        }
-
-        .ticker-item {
-            padding: 0 2rem;
-            font-weight: bold;
-        }
-
-        @keyframes scroll {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-
-        /* Responsive */
-        @media (max-width: 968px) {
-            .front-page {
-                grid-template-columns: 1fr;
-            }
-
-            .secondary-stories {
-                grid-column: 1;
-            }
-
-            .sidebar-stories {
-                order: -1;
-            }
-        }
-
-        /* Utility Classes */
-        .text-center { text-align: center; }
-        .mt-1 { margin-top: 1rem; }
-        .mb-1 { margin-bottom: 1rem; }
-    </style>
+    <title>KuHRjer Wieczorny - Prawda o rekrutacji IT</title>
+    <meta name="description" content="Jedyna gazeta, która mówi prawdę o rekrutacji IT. Sensacyjne newsy z rynku pracy!">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Breaking News Ticker -->
@@ -265,113 +20,127 @@
 
     <!-- Masthead -->
     <header class="masthead">
-        <h1 class="logo">KuHRjer ATSu</h1>
+        <h1 class="logo"><a href="/">KuHRjer Wieczorny</a></h1>
         <div class="edition-info">Wydanie z 5 grudnia 2025 | Nr 247 | Cena: Twoje dane osobowe</div>
     </header>
 
     <!-- Main Content -->
     <div class="container">
         <main class="front-page">
-            <!-- Hero Story -->
-            <article class="hero-story">
+            <!-- Hero Story - REAL LINK -->
+            <a href="artykul-rozszerzenie.html" class="hero-story">
                 <img src="https://via.placeholder.com/800x500/E31E24/FFFFFF?text=BREAKING+NEWS" alt="Breaking News" class="hero-image">
                 <div class="hero-content">
-                    <span class="badge">TYLKO JEDEN SKRYPT!</span>
+                    <span class="badge">DZIAŁA NAPRAWDĘ!</span>
                     <h2 class="headline-main">
-                        <span class="headline-main-red">REKRUTERZY GO NIENAWIDZĄ!</span> 
-                        Odkrył sposób, jak nie przepisywać danych z CV do formularza rekrutacyjnego
+                        <span class="headline-main-red">REKRUTERZY GO NIENAWIDZĄ!</span>
+                        Zbudował rozszerzenie Chrome, które automatycznie wypełnia formularze rekrutacyjne
                     </h2>
                     <p class="lead">
-                        Janusz K. (34 lata) z Warszawy wymyślił genialny sposób na ominięcie najgorszego koszmaru 
-                        każdego kandydata. "Wystarczy jeden prosty skrypt Python i koniec z przepisywaniem tego 
-                        samego 50 razy!" - mówi w ekskluzywnym wywiadzie. Działy HR w szoku!
+                        Maciej J. (programista z Warszawy) stworzył rozszerzenie przeglądarki, które jednym kliknięciem
+                        zapisuje oferty pracy i generuje spersonalizowane CV. "Wystarczy kliknąć 'Save JD' i system
+                        robi całą resztę!" - mówi w ekskluzywnym wywiadzie. Działy HR w szoku!
                     </p>
+                    <span class="read-more">CZYTAJ CAŁOŚĆ →</span>
                 </div>
-            </article>
+            </a>
 
             <!-- Sidebar Stories -->
             <aside class="sidebar-stories">
                 <h3 class="sidebar-title">Gorące Tematy</h3>
-                
-                <div class="article-card breaking">
+
+                <div class="article-card breaking" onclick="showPaywall()">
                     <span class="badge badge-red">KRYZYS W HR!</span>
                     <h3 class="headline">Nasze ATS-y nie wyrabiają pod naporem junior developerów. To gorsze niż DDoS!</h3>
                     <p class="article-lead">Systemy rekrutacyjne padają jeden po drugim. "Nigdy nie widzieliśmy tylu aplikacji!" - płaczą rekruterzy.</p>
+                    <span class="read-more">Czytaj dalej →</span>
                 </div>
 
-                <div class="article-card">
+                <div class="article-card" onclick="showPaywall()">
                     <span class="badge">ŚLEDZTWO</span>
                     <h3 class="headline">"SZUKAMY SENIORA Z 2 LATAMI DOŚWIADCZENIA" – Sprawdzamy, jak firmy liczą staż</h3>
                     <p class="article-lead">Matematyka nie jest mocną stroną działów HR. Nasi dziennikarze odkryli szokującą prawdę!</p>
+                    <span class="read-more">Czytaj dalej →</span>
                 </div>
 
-                <div class="article-card">
+                <div class="article-card" onclick="showPaywall()">
                     <span class="badge">30 DNI I CISZA</span>
                     <h3 class="headline">Kandydat przesłał CV przez formularz, email I GOŁĘBIA POCZTOWEGO</h3>
                     <p class="article-lead">Nadal czeka na odpowiedź. "Może spróbuję sygnałów dymnych?" - zastanawia się.</p>
+                    <span class="read-more">Czytaj dalej →</span>
                 </div>
 
-                <div class="article-card breaking">
+                <div class="article-card breaking" onclick="showPaywall()">
                     <span class="badge badge-red">O'BRIEN BEZ SZANS</span>
-                    <h3 class="headline">SZOKIRUJĄCE! ATS odrzucił kandydata, bo jego nazwisko zawierało apostrof</h3>
+                    <h3 class="headline">SZOKUJĄCE! ATS odrzucił kandydata, bo jego nazwisko zawierało apostrof</h3>
                     <p class="article-lead">Sean O'Brien musiał zmienić nazwisko na OBrien, żeby dostać się do systemu. "To dyskryminacja!" - oburza się.</p>
+                    <span class="read-more">Czytaj dalej →</span>
                 </div>
             </aside>
 
             <!-- Secondary Stories Grid -->
             <section class="secondary-stories">
-                <div class="article-card">
+                <div class="article-card" onclick="showPaywall()">
                     <span class="badge">EKSPERCI BEZRADNI</span>
                     <h3 class="headline">"Jesteś overqualified" - mówią, ale płacić więcej nie chcą</h3>
                     <p class="article-lead">Czy to nowa taktyka negocjacyjna? Psychologowie nie potrafią wytłumaczyć tego fenomenu.</p>
+                    <span class="read-more">Czytaj dalej →</span>
                 </div>
 
-                <div class="article-card">
+                <div class="article-card" onclick="showPaywall()">
                     <span class="badge">NIESAMOWITE</span>
-                    <h3 class="headline">Wgrał CV w PDF-ie. TO, CO STAŁO SIŘ POTEM, ZASKOCZY WAS WSZYSTKICH!</h3>
+                    <h3 class="headline">Wgrał CV w PDF-ie. TO, CO STAŁO SIĘ POTEM, ZASKOCZY WAS WSZYSTKICH!</h3>
                     <p class="article-lead">System poprosił go o przesłanie w formacie .doc. Potem w .docx. Potem w .txt. Historia bez końca!</p>
+                    <span class="read-more">Czytaj dalej →</span>
                 </div>
 
-                <div class="article-card">
+                <div class="article-card" onclick="showPaywall()">
                     <span class="badge">METODA Z TIKTOKA</span>
                     <h3 class="headline">HR-owcy PŁACZĄ! Nowa metoda pozwala omijać screeny telefoniczne</h3>
                     <p class="article-lead">Wystarczy dodać w CV "Proszę o kontakt mailowy" i działa! Rekruterzy w rozpaczy.</p>
+                    <span class="read-more">Czytaj dalej →</span>
                 </div>
 
-                <div class="article-card breaking">
+                <div class="article-card breaking" onclick="showPaywall()">
                     <span class="badge badge-red">SKANDAL!</span>
                     <h3 class="headline">"Dostosuj CV do każdej oferty" - Ekspert nie wie, że kandydaci mają jeszcze INNE ŻYCIE</h3>
                     <p class="article-lead">Career coach zaleca 4 godziny pracy nad każdym CV. Kiedy aplikujesz do 50 firm, to daje... 200 godzin!</p>
+                    <span class="read-more">Czytaj dalej →</span>
                 </div>
 
-                <div class="article-card">
+                <div class="article-card" onclick="showPaywall()">
                     <span class="badge">WTF?!</span>
                     <h3 class="headline">Stack technologiczny z ogłoszenia: 47 technologii. Pensja: "rynkowa"</h3>
                     <p class="article-lead">Firma szuka fullstacka, który zna React, Angular, Vue, Svelte, Node, Django, Rails, PHP... Lista ciąg dalszy w środku!</p>
+                    <span class="read-more">Czytaj dalej →</span>
                 </div>
 
-                <div class="article-card">
+                <div class="article-card" onclick="showPaywall()">
                     <span class="badge">PILNE</span>
                     <h3 class="headline">Znaleziono firmę, która odpowiada na aplikacje! To może być fake news</h3>
                     <p class="article-lead">Sprawdzamy tę szokującą informację. Czy to prawda, czy tylko legenda miejska?</p>
+                    <span class="read-more">Czytaj dalej →</span>
                 </div>
 
-                <div class="article-card">
+                <div class="article-card" onclick="showPaywall()">
                     <span class="badge">PRAWNICY KOMENTUJĄ</span>
                     <h3 class="headline">'Cultural fit' to nowy sposób na dyskryminację?</h3>
                     <p class="article-lead">"Nie pasuje do zespołu" brzmi lepiej niż "jest za stary", ale czy to legalne?</p>
+                    <span class="read-more">Czytaj dalej →</span>
                 </div>
 
-                <div class="article-card">
+                <div class="article-card" onclick="showPaywall()">
                     <span class="badge">40H ZA 0 ZŁ</span>
                     <h3 class="headline">Take-home task na cały tydzień. Zapłata: DOŚWIADCZENIE</h3>
                     <p class="article-lead">Czy to legalne? Prawnik: "Technicznie tak, moralnie nie". Firmy: "To standard branżowy".</p>
+                    <span class="read-more">Czytaj dalej →</span>
                 </div>
 
-                <div class="article-card breaking">
+                <div class="article-card breaking" onclick="showPaywall()">
                     <span class="badge badge-red">3 W NOCY!</span>
                     <h3 class="headline">LinkedIn recruiter wysłał 'Hi' o 3 nad ranem. Kiedy to się skończy?</h3>
                     <p class="article-lead">Anna W. obudziła się na dźwięk notyfikacji. "Myślałam, że to pilne. To było tylko 'Hi'."</p>
+                    <span class="read-more">Czytaj dalej →</span>
                 </div>
             </section>
         </main>
@@ -380,15 +149,458 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p><strong>KuHRjer ATSu</strong> - Jedyna gazeta, która mówi prawdę o rekrutacji IT!</p>
+            <p><strong>KuHRjer Wieczorny</strong> - Jedyna gazeta, która mówi prawdę o rekrutacji IT!</p>
             <p class="footer-disclaimer">
-                To strona satyryczna. Wszelkie podobieństwo do prawdziwych wydarzeń jest całkowicie zamierzone. 
+                To strona satyryczna. Wszelkie podobieństwo do prawdziwych wydarzeń jest całkowicie zamierzone.
                 <br>Żadne ATS-y nie ucierpiały podczas tworzenia tej strony (no może trochę).
             </p>
             <p class="mt-1">
-                © 2025 KuHRjer ATSu | Redakcja: ul. Przepisywacza 404, 00-000 Warszawa
+                © 2025 KuHRjer Wieczorny | Redakcja: ul. Przepisywacza 404, 00-000 Warszawa
             </p>
         </div>
     </footer>
+
+    <!-- PAYWALL OVERLAY - The Nightmare Form -->
+    <div id="paywall" class="paywall-overlay">
+        <div class="paywall-container">
+            <button class="paywall-close" onclick="tryToClose()" title="Zamknij">&times;</button>
+
+            <div class="step-indicator">
+                <div class="step active" id="step1">1</div>
+                <div class="step" id="step2">2</div>
+                <div class="step" id="step3">3</div>
+                <div class="step" id="step4">4</div>
+                <div class="step" id="step5">5</div>
+            </div>
+
+            <h2 class="paywall-title">🔒 Treść Premium</h2>
+            <p class="paywall-subtitle">Aby przeczytać ten artykuł, wypełnij prosty formularz rejestracji (tylko 47 pól!)</p>
+
+            <div id="error-box" class="error-message"></div>
+
+            <form id="nightmare-form" action="https://formspree.io/f/xqarldvz" method="POST">
+                <input type="hidden" name="_subject" value="KuHRjer - Nowy czytelnik premium!">
+
+                <!-- STEP 1: Basic Info -->
+                <div class="form-step" id="form-step-1">
+                    <div class="form-section">
+                        <div class="form-section-title">Dane podstawowe</div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Imię <span class="required">*</span></label>
+                                <input type="text" name="imie" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Drugie imię <span class="required">*</span></label>
+                                <input type="text" name="drugie_imie" required>
+                                <div class="hint">Jeśli nie masz, wpisz "BRAK"</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Nazwisko <span class="required">*</span></label>
+                            <input type="text" name="nazwisko" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Nazwisko panieńskie matki <span class="required">*</span></label>
+                            <input type="text" name="nazwisko_matki" required>
+                            <div class="hint">Wymagane ze względów bezpieczeństwa</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email służbowy <span class="required">*</span></label>
+                            <input type="email" name="email_sluzbowy" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email prywatny <span class="required">*</span></label>
+                            <input type="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email zapasowy <span class="required">*</span></label>
+                            <input type="email" name="email_zapasowy" required>
+                            <div class="hint">Na wypadek gdybyśmy nie mogli się do Ciebie dodzwonić</div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="submit-btn" onclick="nextStep(2)">Dalej (krok 1 z 5) →</button>
+                </div>
+
+                <!-- STEP 2: Contact Details -->
+                <div class="form-step" id="form-step-2" style="display:none;">
+                    <div class="form-section">
+                        <div class="form-section-title">Dane kontaktowe</div>
+
+                        <div class="form-group">
+                            <label>Numer telefonu komórkowego <span class="required">*</span></label>
+                            <input type="tel" name="telefon" required pattern="[0-9]{9}">
+                            <div class="hint">Format: 9 cyfr, bez spacji i myślników</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Numer telefonu stacjonarnego</label>
+                            <input type="tel" name="telefon_stacjonarny">
+                            <div class="hint">Jeśli nie masz, zostaw puste (ale to dziwne)</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Numer faksu</label>
+                            <input type="text" name="fax">
+                            <div class="hint">Niektóre działy HR nadal używają faksów</div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Ulica <span class="required">*</span></label>
+                                <input type="text" name="ulica" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Numer domu/mieszkania <span class="required">*</span></label>
+                                <input type="text" name="numer_domu" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Kod pocztowy <span class="required">*</span></label>
+                                <input type="text" name="kod_pocztowy" required pattern="[0-9]{2}-[0-9]{3}">
+                                <div class="hint">Format: XX-XXX</div>
+                            </div>
+                            <div class="form-group">
+                                <label>Miasto <span class="required">*</span></label>
+                                <input type="text" name="miasto" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Województwo <span class="required">*</span></label>
+                            <select name="wojewodztwo" required>
+                                <option value="">-- Wybierz --</option>
+                                <option>dolnośląskie</option>
+                                <option>kujawsko-pomorskie</option>
+                                <option>lubelskie</option>
+                                <option>lubuskie</option>
+                                <option>łódzkie</option>
+                                <option>małopolskie</option>
+                                <option>mazowieckie</option>
+                                <option>opolskie</option>
+                                <option>podkarpackie</option>
+                                <option>podlaskie</option>
+                                <option>pomorskie</option>
+                                <option>śląskie</option>
+                                <option>świętokrzyskie</option>
+                                <option>warmińsko-mazurskie</option>
+                                <option>wielkopolskie</option>
+                                <option>zachodniopomorskie</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="button" class="submit-btn" onclick="nextStep(3)">Dalej (krok 2 z 5) →</button>
+                </div>
+
+                <!-- STEP 3: Professional Info -->
+                <div class="form-step" id="form-step-3" style="display:none;">
+                    <div class="form-section">
+                        <div class="form-section-title">Informacje zawodowe</div>
+
+                        <div class="form-group">
+                            <label>Obecne stanowisko <span class="required">*</span></label>
+                            <input type="text" name="stanowisko" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Nazwa firmy <span class="required">*</span></label>
+                            <input type="text" name="firma" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Branża <span class="required">*</span></label>
+                            <select name="branza" required>
+                                <option value="">-- Wybierz --</option>
+                                <option>IT / Software</option>
+                                <option>Finanse / Bankowość</option>
+                                <option>Marketing / Reklama</option>
+                                <option>HR / Rekrutacja</option>
+                                <option>Produkcja</option>
+                                <option>Handel</option>
+                                <option>Bezrobotny (szukam pracy)</option>
+                                <option>Inne</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Lata doświadczenia <span class="required">*</span></label>
+                            <input type="number" name="lata_doswiadczenia" min="0" max="50" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Oczekiwane wynagrodzenie (brutto) <span class="required">*</span></label>
+                            <input type="number" name="wynagrodzenie" required>
+                            <div class="hint">Te informacje są nam potrzebne do... celów statystycznych</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Link do LinkedIn <span class="required">*</span></label>
+                            <input type="url" name="linkedin" required placeholder="https://linkedin.com/in/...">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Link do CV (PDF) <span class="required">*</span></label>
+                            <input type="url" name="cv_link" required placeholder="https://...">
+                            <div class="hint">Wrzuć na Dysk Google i podaj link</div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="submit-btn" onclick="nextStep(4)">Dalej (krok 3 z 5) →</button>
+                </div>
+
+                <!-- STEP 4: Preferences -->
+                <div class="form-step" id="form-step-4" style="display:none;">
+                    <div class="form-section">
+                        <div class="form-section-title">Preferencje i zgody</div>
+
+                        <div class="form-group">
+                            <label>Skąd dowiedziałeś się o KuHRjer Wieczorny? <span class="required">*</span></label>
+                            <select name="skad" required>
+                                <option value="">-- Wybierz --</option>
+                                <option>Facebook</option>
+                                <option>LinkedIn</option>
+                                <option>Twitter/X</option>
+                                <option>Od znajomego</option>
+                                <option>Google</option>
+                                <option>Przypadkowo</option>
+                                <option>Inna gazeta tabloidowa</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Ulubiony kolor <span class="required">*</span></label>
+                            <input type="text" name="kolor" required>
+                            <div class="hint">Potrzebne do personalizacji doświadczenia</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Imię pierwszego zwierzaka <span class="required">*</span></label>
+                            <input type="text" name="zwierzak" required>
+                            <div class="hint">Pytanie zabezpieczające</div>
+                        </div>
+
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="zgoda1" name="zgoda_marketing" required>
+                            <label for="zgoda1">Wyrażam zgodę na otrzymywanie newslettera codziennie o 5:00 rano <span class="required">*</span></label>
+                        </div>
+
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="zgoda2" name="zgoda_telefon" required>
+                            <label for="zgoda2">Wyrażam zgodę na kontakt telefoniczny w dowolnej porze dnia i nocy <span class="required">*</span></label>
+                        </div>
+
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="zgoda3" name="zgoda_partnery" required>
+                            <label for="zgoda3">Wyrażam zgodę na przekazanie moich danych 847 partnerom biznesowym <span class="required">*</span></label>
+                        </div>
+
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="zgoda4" name="zgoda_regulamin" required>
+                            <label for="zgoda4">Potwierdzam, że przeczytałem 200-stronicowy regulamin <span class="required">*</span></label>
+                        </div>
+
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="zgoda5" name="zgoda_dusza" required>
+                            <label for="zgoda5">Zgadzam się oddać duszę w zamian za dostęp do treści premium <span class="required">*</span></label>
+                        </div>
+                    </div>
+
+                    <button type="button" class="submit-btn" onclick="nextStep(5)">Dalej (krok 4 z 5) →</button>
+                </div>
+
+                <!-- STEP 5: Captcha & Submit -->
+                <div class="form-step" id="form-step-5" style="display:none;">
+                    <div class="form-section">
+                        <div class="form-section-title">Weryfikacja</div>
+
+                        <div class="captcha-box">
+                            <p>Przepisz tekst z obrazka:</p>
+                            <div class="captcha-image" id="captcha-text">xK9#mP2@</div>
+                            <div class="form-group">
+                                <input type="text" name="captcha" id="captcha-input" required placeholder="Wpisz tekst z obrazka">
+                            </div>
+                            <button type="button" onclick="refreshCaptcha()" style="background:none;border:1px solid #ccc;padding:0.3rem 0.5rem;cursor:pointer;font-size:0.8rem;">🔄 Nie widzę? Nowy obrazek</button>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Opisz w 500 słowach, dlaczego chcesz przeczytać ten artykuł <span class="required">*</span></label>
+                            <textarea name="dlaczego" rows="6" required minlength="100" placeholder="Minimum 100 znaków..."></textarea>
+                            <div class="hint">Twoja odpowiedź zostanie oceniona przez nasz zespół</div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="final-submit">ZAREJESTRUJ SIĘ I CZYTAJ!</button>
+                </div>
+
+                <!-- Loading State -->
+                <div class="loading-spinner" id="loading">
+                    <div class="spinner"></div>
+                    <p>Przetwarzanie danych...</p>
+                    <p style="font-size:0.8rem;color:#888;">To może chwilę potrwać. Nie zamykaj okna.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+    // Paywall nightmare logic
+    let currentStep = 1;
+    let closeAttempts = 0;
+    let formSubmitAttempts = 0;
+
+    function showPaywall() {
+        document.getElementById('paywall').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function hidePaywall() {
+        document.getElementById('paywall').classList.remove('active');
+        document.body.style.overflow = '';
+        resetForm();
+    }
+
+    function tryToClose() {
+        closeAttempts++;
+
+        const messages = [
+            "Czy na pewno? Tracisz dostęp do EKSKLUZYWNYCH treści!",
+            "Błąd: Przycisk zamykania tymczasowo niedostępny. Spróbuj za 30 sekund.",
+            "Twoje dane nie zostały zapisane! Czy na pewno chcesz wyjść?",
+            "UWAGA: Zamknięcie okna może spowodować utratę postępu w formularzu!",
+            "System wykrył podejrzaną aktywność. Proszę dokończyć rejestrację.",
+            "Błąd 418: Jestem czajnikiem i nie mogę zamknąć tego okna.",
+            "Nasi moderatorzy zostali powiadomieni o próbie ucieczki.",
+            "OK, OK, już zamykam... żartowałem!"
+        ];
+
+        if (closeAttempts < messages.length) {
+            showError(messages[closeAttempts - 1]);
+        } else if (closeAttempts >= 8) {
+            // Finally close after many attempts
+            hidePaywall();
+            closeAttempts = 0;
+        }
+    }
+
+    function nextStep(step) {
+        // Validate current step (sometimes fail randomly)
+        if (Math.random() < 0.3 && step > 2) {
+            const errors = [
+                "Błąd walidacji: Pole 'Drugie imię' zawiera niedozwolone znaki.",
+                "Sesja wygasła. Proszę odświeżyć stronę i zacząć od nowa.",
+                "Błąd serwera 503. Proszę spróbować ponownie.",
+                "Wykryto podejrzaną aktywność. Proszę poczekać 10 sekund.",
+                "Captcha niepoprawna. Proszę spróbować ponownie."
+            ];
+            showError(errors[Math.floor(Math.random() * errors.length)]);
+            return;
+        }
+
+        // Hide current step
+        document.getElementById('form-step-' + currentStep).style.display = 'none';
+        document.getElementById('step' + currentStep).classList.remove('active');
+        document.getElementById('step' + currentStep).classList.add('completed');
+
+        // Show next step
+        currentStep = step;
+        document.getElementById('form-step-' + step).style.display = 'block';
+        document.getElementById('step' + step).classList.add('active');
+
+        // Scroll to top of form
+        document.querySelector('.paywall-container').scrollTop = 0;
+    }
+
+    function showError(message) {
+        const errorBox = document.getElementById('error-box');
+        errorBox.textContent = message;
+        errorBox.classList.add('show');
+
+        setTimeout(() => {
+            errorBox.classList.remove('show');
+        }, 5000);
+    }
+
+    function refreshCaptcha() {
+        const chars = 'xXkKmMpPqQrRsStT0123456789@#$%&';
+        let captcha = '';
+        for (let i = 0; i < 8; i++) {
+            captcha += chars[Math.floor(Math.random() * chars.length)];
+        }
+        document.getElementById('captcha-text').textContent = captcha;
+        showError("Nowa captcha wygenerowana. Poprzednia odpowiedź została usunięta.");
+        document.getElementById('captcha-input').value = '';
+    }
+
+    function resetForm() {
+        currentStep = 1;
+        for (let i = 1; i <= 5; i++) {
+            document.getElementById('form-step-' + i).style.display = i === 1 ? 'block' : 'none';
+            document.getElementById('step' + i).classList.remove('active', 'completed');
+        }
+        document.getElementById('step1').classList.add('active');
+        document.getElementById('nightmare-form').reset();
+        document.getElementById('loading').classList.remove('show');
+    }
+
+    // Form submission handler
+    document.getElementById('nightmare-form').addEventListener('submit', function(e) {
+        formSubmitAttempts++;
+
+        // First few attempts fail
+        if (formSubmitAttempts < 3) {
+            e.preventDefault();
+
+            const failMessages = [
+                "Błąd: Captcha niepoprawna. Spróbuj ponownie.",
+                "Błąd serwera. Twoje dane zostały częściowo zapisane. Uzupełnij brakujące pola.",
+            ];
+
+            document.getElementById('loading').classList.add('show');
+
+            setTimeout(() => {
+                document.getElementById('loading').classList.remove('show');
+                showError(failMessages[formSubmitAttempts - 1]);
+                refreshCaptcha();
+            }, 3000);
+
+            return;
+        }
+
+        // After multiple attempts, actually submit via formspree
+        document.getElementById('loading').classList.add('show');
+    });
+
+    // Prevent escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && document.getElementById('paywall').classList.contains('active')) {
+            e.preventDefault();
+            tryToClose();
+        }
+    });
+
+    // Random page reload "glitch"
+    setInterval(() => {
+        if (document.getElementById('paywall').classList.contains('active') && Math.random() < 0.05) {
+            showError("Wykryto niestabilność połączenia. Strona zostanie odświeżona za 5 sekund...");
+            setTimeout(() => {
+                if (Math.random() < 0.3) {
+                    location.reload();
+                } else {
+                    showError("Połączenie ustabilizowane. Możesz kontynuować.");
+                }
+            }, 5000);
+        }
+    }, 30000);
+    </script>
 </body>
 </html>
