@@ -1,0 +1,48 @@
+:root {
+  --tabloid-red: #E31E24;
+  --tabloid-yellow: #FFD700;
+  --tabloid-black: #000;
+}
+
+.masthead {
+  background: var(--tabloid-red);
+  padding: 1rem;
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Impact', sans-serif;
+  font-size: 4rem;
+  color: white;
+  text-shadow: 3px 3px 0 var(--tabloid-black);
+}
+
+.headline-main {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin: 1rem 0;
+}
+
+.badge {
+  background: var(--tabloid-yellow);
+  color: var(--tabloid-black);
+  padding: 0.3rem 0.8rem;
+  font-weight: bold;
+  transform: rotate(-2deg);
+  display: inline-block;
+}
+
+.front-page {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .front-page {
+    grid-template-columns: 1fr;
+  }
+}
