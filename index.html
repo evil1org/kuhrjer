@@ -12,7 +12,7 @@
     <div class="breaking-ticker">
         <div class="ticker-content">
             <span class="ticker-item">🔥 PILNE: Kolejny ATS przestał działać!</span>
-            <span class="ticker-item">💕 SZOK: Inwestor proponuje założycielce "spacer w Łazienkach" - ona odmawia, on żąda 500 mln!</span>
+            <span class="ticker-item">💕 DZIWNE: Chief HR Officer zaprasza kandydata na "wieczorny spacer w Parku Morskie Oko" - chce sprawdzić jego kompetencje!</span>
             <span class="ticker-item">💥 SKANDAL: Firma szuka seniora za 6000 brutto!</span>
             <span class="ticker-item">⚡ OSTATNIA CHWILA: Junior developer dostał odpowiedź po 6 miesiącach!</span>
             <span class="ticker-item">🚨 BREAKING: Recruiter odpowiedział na LinkedIn po 3 dniach - to rekord!</span>
@@ -22,38 +22,85 @@
     <!-- Masthead -->
     <header class="masthead">
         <h1 class="logo"><a href="/">KuHRjer Wieczorny</a></h1>
-        <div class="edition-info">Wydanie z 5 grudnia 2025 | Nr 247 | Cena: Twoje dane osobowe</div>
+        <div class="edition-info">Wydanie z 5 grudnia 2025 | Nr 247 | Cena: $247/tydzień lub mniej, jeśli chcesz czytać wyłącznie artykuły sponsorowane</div>
     </header>
 
     <!-- Main Content -->
     <div class="container">
         <main class="front-page">
+            <!-- Hero Column Container -->
+            <div class="hero-column">
             <!-- Hero Story - REAL LINK -->
             <a href="artykul-rozszerzenie.html" class="hero-story">
                 <img src="https://via.placeholder.com/800x500/E31E24/FFFFFF?text=BREAKING+NEWS" alt="Breaking News" class="hero-image">
                 <div class="hero-content">
                     <span class="badge">DZIAŁA NAPRAWDĘ!</span>
                     <h2 class="headline-main">
-                        <span class="headline-main-red">REKRUTERZY GO NIENAWIDZĄ!</span>
-                        Zbudował rozszerzenie Chrome, które automatycznie wypełnia formularze rekrutacyjne
+                        <span class="headline-main-red" id="hero-headline-red">REKRUTERZY GO NIENAWIDZĄ!</span>
+                        <span id="hero-headline-rest">Zbudował wtyczkę do formularzy rekrutacyjnych</span>
                     </h2>
                     <p class="lead">
-                        Pan Zdzisław ze Spizgawicy Wielkiej stworzył rozszerzenie przeglądarki, które jednym kliknięciem
-                        zapisuje oferty pracy. "Mam 200-250 pól do wypełnienia na jedno stanowisko. Oszczędzam 20h tygodniowo,
-                        które przeznaczam na pracę w ogrodzie!" - mówi w ekskluzywnym wywiadzie. Działy HR w szoku!
+                        Pan Zdzisław z Małkini stworzył wtyczkę, która jednym kliknięciem
+                        zapisuje oferty pracy i generuje spersonalizowane listy motywacyjne. "Mam 200-250 pól do wypełnienia
+                        na jedno stanowisko. Oszczędzam 20h tygodniowo, które przeznaczam na pracę w ogrodzie!" - mówi
+                        w ekskluzywnym wywiadzie.
+                    </p>
+                    <p class="lead" style="margin-top:0.5rem;">
+                        <strong>Działy HR w szoku!</strong> "To nieuczciwe!" - krzyczy Anna K., Head of Talent Acquisition.
+                        "Nie po to projektowałam 10-stronicowy formularz, żeby sobie kandydat jednym kliknięciem wszystko uzupełniał!
+                        Gdzie szacunek dla mojej pracy?!"
+                    </p>
+                    <p class="lead" style="margin-top:0.5rem;font-size:0.95rem;">
+                        W artykule: SZOKUJĄCE zeznania rekruterów, oficjalne stanowisko Taleo/Oracle w sprawie "zbyt szybkiego
+                        aplikowania", lista rzeczy które według HR powinny być NIELEGALNE, oraz odpowiedź dr hab. Grażyny
+                        Formularzewskiej z Uniwersytetu Biurokratycznego.
+                    </p>
+                    <p class="lead" style="margin-top:0.5rem;font-size:0.9rem;color:#666;">
+                        "Kandydat powinien z uwagą i rozmysłem indywidualnie podchodzić do każdej aplikacji. Używanie skryptów
+                        to dehumanizacja procesu rekrutacji!" - Bartosz M., Senior Recruitment Specialist
                     </p>
                     <span class="read-more">CZYTAJ CAŁOŚĆ →</span>
                 </div>
             </a>
+
+            <!-- Sponsored Article - Right after hero -->
+            <div class="sponsored-inline" id="sponsorowany">
+                <div class="sponsored-header">
+                    <span class="sponsored-badge">ARTYKUŁ SPONSOROWANY</span>
+                </div>
+
+                <h3 class="sponsored-title-small">Koniec z przepisywaniem CV do formularzy!</h3>
+
+                <div class="sponsored-products-inline">
+                    <div class="sponsored-product-small">
+                        <strong>🔖 JD Saver</strong> - zapisuj oferty jednym kliknięciem + generuj listy motywacyjne z AI
+                    </div>
+                    <div class="sponsored-product-small">
+                        <strong>📝 CV Form Filler</strong> - automatyczne wypełnianie formularzy ATS, oszczędność 20h/tydzień
+                    </div>
+                </div>
+
+                <div class="sponsored-form-inline">
+                    <p><strong>Zostań testerem beta!</strong> Dożywotni dostęp za darmo.</p>
+                    <form action="https://formspree.io/f/xqarldvz" method="POST" class="inline-form">
+                        <input type="hidden" name="_subject" value="KuHRjer - Tester (inline)">
+                        <input type="hidden" name="form_type" value="inline_tester">
+                        <input type="email" name="email" required placeholder="Twój email">
+                        <button type="submit">Zapisz się!</button>
+                    </form>
+                    <a href="https://discord.gg/6qTYZK8ARt" target="_blank" class="discord-link-small">Discord</a>
+                </div>
+            </div>
+            </div><!-- /hero-column -->
 
             <!-- Sidebar Stories -->
             <aside class="sidebar-stories">
                 <h3 class="sidebar-title">Gorące Tematy</h3>
 
                 <div class="article-card breaking" onclick="showPaywall()">
-                    <span class="badge badge-red">ZAUROCZONY!</span>
-                    <h3 class="headline">Inwestor proponuje założycielce "wieczorny spacer w Łazienkach". Potem żąda 500 mln zł</h3>
-                    <p class="article-lead">"Byłem mega zauroczony" - mówi inwestor w TV. Kobieta odmawia spaceru, teraz ma komornika na koncie. Zbiera milion na obronę.</p>
+                    <span class="badge badge-red">CO TO ZNACZY?!</span>
+                    <h3 class="headline">Szefowa HR zaprosiła mnie na wieczorny spacer w Parku Morskie Oko. Nie wiem co myśleć</h3>
+                    <p class="article-lead">"Powiedziała, że chce osobiście sprawdzić moje kompetencje. Nie doprecyzowała o jakie dokładnie jej chodzi" - pisze zaniepokojony kandydat.</p>
                     <span class="read-more">Czytaj dalej →</span>
                 </div>
 
@@ -150,6 +197,27 @@
                     <p class="article-lead">Anna W. obudziła się na dźwięk notyfikacji. "Myślałam, że to pilne. To było tylko 'Hi'."</p>
                     <span class="read-more">Czytaj dalej →</span>
                 </div>
+
+                <div class="article-card" onclick="showPaywall()">
+                    <span class="badge">NOWE BADANIA</span>
+                    <h3 class="headline">91% rekruterów nie czyta CV dłużej niż 6 sekund. Ale formularz musi mieć 47 pól</h3>
+                    <p class="article-lead">Naukowcy z Harvardu potwierdzają: to nie ma żadnego sensu. HR-owcy: "To standard branżowy".</p>
+                    <span class="read-more">Czytaj dalej →</span>
+                </div>
+
+                <div class="article-card" onclick="showPaywall()">
+                    <span class="badge">DRAMAT</span>
+                    <h3 class="headline">Aplikował na 500 ofert. Zero odpowiedzi. "Może mój email jest zły?"</h3>
+                    <p class="article-lead">Marcin K. sprawdził - email działa. ATS-y po prostu go ignorują. "Czuję się jak duch".</p>
+                    <span class="read-more">Czytaj dalej →</span>
+                </div>
+
+                <div class="article-card breaking" onclick="showPaywall()">
+                    <span class="badge badge-red">WIELKIE ODKRYCIE</span>
+                    <h3 class="headline">"Widełki płacowe? To tajemnica firmowa" - mówi firma, która ma 3000 pracowników</h3>
+                    <p class="article-lead">Kandydaci muszą zgadywać swoje oczekiwania finansowe. "To taki nasz mały test" - śmieje się HR.</p>
+                    <span class="read-more">Czytaj dalej →</span>
+                </div>
             </section>
         </main>
     </div>
@@ -163,7 +231,7 @@
                 <br>Żadne ATS-y nie ucierpiały podczas tworzenia tej strony (no może trochę).
             </p>
             <p class="mt-1">
-                © 2025 KuHRjer Wieczorny | Redakcja: ul. Przepisywacza 404, 00-000 Warszawa
+                © 2025 KuHRjer Wieczorny | <a href="/regulamin.html" style="color:#FFD700;">Regulamin i Polityka Prywatności</a>
             </p>
         </div>
     </footer>
@@ -192,49 +260,69 @@
                 <!-- STEP 1: Basic Info -->
                 <div class="form-step" id="form-step-1">
                     <div class="form-section">
+                        <div class="form-section-title">Zgoda marketingowa</div>
+
+                        <div class="form-checkbox" style="background:#fff9f0;padding:1rem;border:2px solid var(--tabloid-red);margin-bottom:1rem;">
+                            <input type="checkbox" id="marketing-consent" name="zgoda_marketing_first" onchange="toggleFormFields()">
+                            <label for="marketing-consent" style="font-weight:bold;">
+                                Zgadzam się otrzymywać informacje marketingowe <span class="required">*</span>
+                            </label>
+                            <div class="hint" style="margin-left:1.5rem;margin-top:0.5rem;">Zaznacz, aby odblokować formularz i kontynuować rejestrację</div>
+                        </div>
+                    </div>
+
+                    <div class="form-section" id="basic-fields" style="opacity:0.5;pointer-events:none;">
                         <div class="form-section-title">Dane podstawowe</div>
+
+                        <div class="form-group">
+                            <label>Email <span class="required">*</span></label>
+                            <input type="email" name="email" id="primary-email" class="buggy-input" disabled>
+                            <div class="hint">Twój główny adres email</div>
+                        </div>
 
                         <div class="form-row">
                             <div class="form-group">
                                 <label>Imię <span class="required">*</span></label>
-                                <input type="text" name="imie" required>
+                                <input type="text" name="imie" class="buggy-input" disabled>
                             </div>
                             <div class="form-group">
                                 <label>Drugie imię <span class="required">*</span></label>
-                                <input type="text" name="drugie_imie" required>
+                                <input type="text" name="drugie_imie" class="buggy-input" disabled>
                                 <div class="hint">Jeśli nie masz, wpisz "BRAK"</div>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label>Nazwisko <span class="required">*</span></label>
-                            <input type="text" name="nazwisko" required>
+                            <input type="text" name="nazwisko" class="buggy-input" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Kraj <span class="required">*</span></label>
+                            <select name="kraj" id="country-select" disabled>
+                                <option value="">-- Wybierz --</option>
+                            </select>
                         </div>
 
                         <div class="form-group">
                             <label>Nazwisko panieńskie matki <span class="required">*</span></label>
-                            <input type="text" name="nazwisko_matki" required>
+                            <input type="text" name="nazwisko_matki" class="buggy-input" disabled>
                             <div class="hint">Wymagane ze względów bezpieczeństwa</div>
                         </div>
 
                         <div class="form-group">
                             <label>Email służbowy <span class="required">*</span></label>
-                            <input type="email" name="email_sluzbowy" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Email prywatny <span class="required">*</span></label>
-                            <input type="email" name="email" required>
+                            <input type="email" name="email_sluzbowy" class="buggy-input" disabled>
                         </div>
 
                         <div class="form-group">
                             <label>Email zapasowy <span class="required">*</span></label>
-                            <input type="email" name="email_zapasowy" required>
+                            <input type="email" name="email_zapasowy" class="buggy-input" disabled>
                             <div class="hint">Na wypadek gdybyśmy nie mogli się do Ciebie dodzwonić</div>
                         </div>
                     </div>
 
-                    <button type="button" class="submit-btn" onclick="nextStep(2)">Dalej (krok 1 z 5) →</button>
+                    <button type="button" class="submit-btn" id="step1-btn" onclick="nextStep(2)" disabled style="opacity:0.5;">Dalej (krok 1 z 5) →</button>
                 </div>
 
                 <!-- STEP 2: Contact Details -->
@@ -244,48 +332,48 @@
 
                         <div class="form-group">
                             <label>Numer telefonu komórkowego <span class="required">*</span></label>
-                            <input type="tel" name="telefon" required pattern="[0-9]{9}">
+                            <input type="tel" name="telefon" class="buggy-input" pattern="[0-9]{9}">
                             <div class="hint">Format: 9 cyfr, bez spacji i myślników</div>
                         </div>
 
                         <div class="form-group">
-                            <label>Numer telefonu stacjonarnego</label>
-                            <input type="tel" name="telefon_stacjonarny">
+                            <label>Numer telefonu stacjonarnego <span class="required">*</span></label>
+                            <input type="tel" name="telefon_stacjonarny" class="buggy-input">
                             <div class="hint">Jeśli nie masz, zostaw puste (ale to dziwne)</div>
                         </div>
 
                         <div class="form-group">
-                            <label>Numer faksu</label>
-                            <input type="text" name="fax">
+                            <label>Numer faksu <span class="required">*</span></label>
+                            <input type="text" name="fax" class="buggy-input">
                             <div class="hint">Niektóre działy HR nadal używają faksów</div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
                                 <label>Ulica <span class="required">*</span></label>
-                                <input type="text" name="ulica" required>
+                                <input type="text" name="ulica" class="buggy-input">
                             </div>
                             <div class="form-group">
                                 <label>Numer domu/mieszkania <span class="required">*</span></label>
-                                <input type="text" name="numer_domu" required>
+                                <input type="text" name="numer_domu" class="buggy-input">
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
                                 <label>Kod pocztowy <span class="required">*</span></label>
-                                <input type="text" name="kod_pocztowy" required pattern="[0-9]{2}-[0-9]{3}">
+                                <input type="text" name="kod_pocztowy" class="buggy-input" pattern="[0-9]{2}-[0-9]{3}">
                                 <div class="hint">Format: XX-XXX</div>
                             </div>
                             <div class="form-group">
                                 <label>Miasto <span class="required">*</span></label>
-                                <input type="text" name="miasto" required>
+                                <input type="text" name="miasto" class="buggy-input">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label>Województwo <span class="required">*</span></label>
-                            <select name="wojewodztwo" required>
+                            <select name="wojewodztwo">
                                 <option value="">-- Wybierz --</option>
                                 <option>dolnośląskie</option>
                                 <option>kujawsko-pomorskie</option>
@@ -317,17 +405,17 @@
 
                         <div class="form-group">
                             <label>Obecne stanowisko <span class="required">*</span></label>
-                            <input type="text" name="stanowisko" required>
+                            <input type="text" name="stanowisko" class="buggy-input">
                         </div>
 
                         <div class="form-group">
                             <label>Nazwa firmy <span class="required">*</span></label>
-                            <input type="text" name="firma" required>
+                            <input type="text" name="firma" class="buggy-input">
                         </div>
 
                         <div class="form-group">
                             <label>Branża <span class="required">*</span></label>
-                            <select name="branza" required>
+                            <select name="branza">
                                 <option value="">-- Wybierz --</option>
                                 <option>IT / Software</option>
                                 <option>Finanse / Bankowość</option>
@@ -342,23 +430,23 @@
 
                         <div class="form-group">
                             <label>Lata doświadczenia <span class="required">*</span></label>
-                            <input type="number" name="lata_doswiadczenia" min="0" max="50" required>
+                            <input type="number" name="lata_doswiadczenia" min="0" max="50">
                         </div>
 
                         <div class="form-group">
                             <label>Oczekiwane wynagrodzenie (brutto) <span class="required">*</span></label>
-                            <input type="number" name="wynagrodzenie" required>
+                            <input type="number" name="wynagrodzenie">
                             <div class="hint">Te informacje są nam potrzebne do... celów statystycznych</div>
                         </div>
 
                         <div class="form-group">
                             <label>Link do LinkedIn <span class="required">*</span></label>
-                            <input type="url" name="linkedin" required placeholder="https://linkedin.com/in/...">
+                            <input type="url" name="linkedin" class="buggy-input" placeholder="https://linkedin.com/in/...">
                         </div>
 
                         <div class="form-group">
                             <label>Link do CV (PDF) <span class="required">*</span></label>
-                            <input type="url" name="cv_link" required placeholder="https://...">
+                            <input type="url" name="cv_link" class="buggy-input" placeholder="https://...">
                             <div class="hint">Wrzuć na Dysk Google i podaj link</div>
                         </div>
                     </div>
@@ -373,7 +461,7 @@
 
                         <div class="form-group">
                             <label>Skąd dowiedziałeś się o KuHRjer Wieczorny? <span class="required">*</span></label>
-                            <select name="skad" required>
+                            <select name="skad">
                                 <option value="">-- Wybierz --</option>
                                 <option>Facebook</option>
                                 <option>LinkedIn</option>
@@ -387,38 +475,44 @@
 
                         <div class="form-group">
                             <label>Ulubiony kolor <span class="required">*</span></label>
-                            <input type="text" name="kolor" required>
+                            <select name="kolor">
+                                <option value="">-- Wybierz --</option>
+                                <option value="czerwony">Czerwony (jak nasze logo)</option>
+                                <option value="zolty">Żółty (jak nasza pasja)</option>
+                                <option value="czarny">Czarny (jak przyszłość ATS-ów)</option>
+                                <option value="inny">Inny (jesteś nonkonformistą)</option>
+                            </select>
                             <div class="hint">Potrzebne do personalizacji doświadczenia</div>
                         </div>
 
                         <div class="form-group">
                             <label>Imię pierwszego zwierzaka <span class="required">*</span></label>
-                            <input type="text" name="zwierzak" required>
+                            <input type="text" name="zwierzak" class="buggy-input">
                             <div class="hint">Pytanie zabezpieczające</div>
                         </div>
 
                         <div class="form-checkbox">
-                            <input type="checkbox" id="zgoda1" name="zgoda_marketing" required>
+                            <input type="checkbox" id="zgoda1" name="zgoda_marketing">
                             <label for="zgoda1">Wyrażam zgodę na otrzymywanie newslettera codziennie o 5:00 rano <span class="required">*</span></label>
                         </div>
 
                         <div class="form-checkbox">
-                            <input type="checkbox" id="zgoda2" name="zgoda_telefon" required>
+                            <input type="checkbox" id="zgoda2" name="zgoda_telefon">
                             <label for="zgoda2">Wyrażam zgodę na kontakt telefoniczny w dowolnej porze dnia i nocy <span class="required">*</span></label>
                         </div>
 
                         <div class="form-checkbox">
-                            <input type="checkbox" id="zgoda3" name="zgoda_partnery" required>
+                            <input type="checkbox" id="zgoda3" name="zgoda_partnery">
                             <label for="zgoda3">Wyrażam zgodę na przekazanie moich danych 847 partnerom biznesowym <span class="required">*</span></label>
                         </div>
 
                         <div class="form-checkbox">
-                            <input type="checkbox" id="zgoda4" name="zgoda_regulamin" required>
+                            <input type="checkbox" id="zgoda4" name="zgoda_regulamin">
                             <label for="zgoda4">Potwierdzam, że przeczytałem 200-stronicowy regulamin <span class="required">*</span></label>
                         </div>
 
                         <div class="form-checkbox">
-                            <input type="checkbox" id="zgoda5" name="zgoda_dusza" required>
+                            <input type="checkbox" id="zgoda5" name="zgoda_dusza">
                             <label for="zgoda5">Zgadzam się oddać duszę w zamian za dostęp do treści premium <span class="required">*</span></label>
                         </div>
                     </div>
@@ -435,14 +529,14 @@
                             <p>Przepisz tekst z obrazka:</p>
                             <div class="captcha-image" id="captcha-text">xK9#mP2@</div>
                             <div class="form-group">
-                                <input type="text" name="captcha" id="captcha-input" required placeholder="Wpisz tekst z obrazka">
+                                <input type="text" name="captcha" id="captcha-input" class="buggy-input" placeholder="Wpisz tekst z obrazka">
                             </div>
                             <button type="button" onclick="refreshCaptcha()" style="background:none;border:1px solid #ccc;padding:0.3rem 0.5rem;cursor:pointer;font-size:0.8rem;">🔄 Nie widzę? Nowy obrazek</button>
                         </div>
 
                         <div class="form-group">
                             <label>Opisz w 500 słowach, dlaczego chcesz przeczytać ten artykuł <span class="required">*</span></label>
-                            <textarea name="dlaczego" rows="6" required minlength="100" placeholder="Minimum 100 znaków..."></textarea>
+                            <textarea name="dlaczego" rows="6" minlength="100" placeholder="Minimum 100 znaków..."></textarea>
                             <div class="hint">Twoja odpowiedź zostanie oceniona przez nasz zespół</div>
                         </div>
                     </div>
@@ -456,6 +550,19 @@
                     <p>Przetwarzanie danych...</p>
                     <p style="font-size:0.8rem;color:#888;">To może chwilę potrwać. Nie zamykaj okna.</p>
                 </div>
+
+                <!-- Success State -->
+                <div class="form-step" id="form-success" style="display:none;">
+                    <div style="text-align:center;padding:2rem;">
+                        <div style="font-size:4rem;margin-bottom:1rem;">⏳</div>
+                        <h3 style="color:var(--tabloid-red);margin-bottom:1rem;">Formularz wysłany!</h3>
+                        <p style="font-size:1.2rem;font-weight:bold;margin-bottom:1rem;">Oczekiwanie na zatwierdzenie przez administratora</p>
+                        <p style="color:#666;font-size:0.9rem;">Otrzymasz powiadomienie email, gdy Twoje konto zostanie aktywowane.</p>
+                        <p style="color:#888;font-size:0.8rem;margin-top:1rem;">Średni czas oczekiwania: 3-5 dni roboczych*</p>
+                        <p style="color:#aaa;font-size:0.7rem;margin-top:0.5rem;">* lub nigdy, zależnie od obłożenia</p>
+                        <button type="button" class="submit-btn" onclick="hidePaywall()" style="margin-top:2rem;">Zamknij</button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
@@ -465,10 +572,147 @@
     let currentStep = 1;
     let closeAttempts = 0;
     let formSubmitAttempts = 0;
+    let emailSaved = false;
+    let paywallClicks = 0;
+    let canClosePaywall = false;
+
+    // Country list - randomized each time
+    const countries = [
+        'Polska', 'Niemcy', 'Francja', 'Włochy', 'Hiszpania', 'Portugalia', 'Holandia',
+        'Belgia', 'Austria', 'Szwajcaria', 'Czechy', 'Słowacja', 'Węgry', 'Rumunia',
+        'Bułgaria', 'Chorwacja', 'Słowenia', 'Serbia', 'Grecja', 'Turcja', 'Ukraina',
+        'Wielka Brytania', 'Irlandia', 'Szwecja', 'Norwegia', 'Dania', 'Finlandia',
+        'Estonia', 'Łotwa', 'Litwa', 'USA', 'Kanada', 'Meksyk', 'Brazylia', 'Argentyna',
+        'Chile', 'Kolumbia', 'Chiny', 'Japonia', 'Korea Południowa', 'Indie', 'Australia',
+        'Nowa Zelandia', 'RPA', 'Egipt', 'Maroko', 'Zjednoczone Emiraty Arabskie',
+        'Singapur', 'Malezja', 'Tajlandia', 'Wietnam', 'Indonezja', 'Filipiny'
+    ];
+
+    // Shuffle array randomly
+    function shuffleArray(array) {
+        const shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+    }
+
+    // Initialize country dropdown with random order
+    function initCountrySelect() {
+        const select = document.getElementById('country-select');
+        const shuffledCountries = shuffleArray(countries);
+        shuffledCountries.forEach(country => {
+            const option = document.createElement('option');
+            option.value = country;
+            option.textContent = country;
+            select.appendChild(option);
+        });
+    }
+
+    // Buggy input behavior - randomly eats or duplicates letters
+    function initBuggyInputs() {
+        document.querySelectorAll('.buggy-input').forEach(input => {
+            input.addEventListener('input', function(e) {
+                // 15% chance of buggy behavior
+                if (Math.random() < 0.15) {
+                    const val = this.value;
+                    if (val.length > 0) {
+                        if (Math.random() < 0.5) {
+                            // Eat a random letter
+                            const pos = Math.floor(Math.random() * val.length);
+                            this.value = val.slice(0, pos) + val.slice(pos + 1);
+                        } else {
+                            // Duplicate the last letter
+                            this.value = val + val[val.length - 1];
+                        }
+                    }
+                }
+            });
+        });
+    }
+
+    // Save email on blur (only once)
+    function initEmailCapture() {
+        const emailInput = document.getElementById('primary-email');
+        emailInput.addEventListener('blur', function() {
+            if (!emailSaved && this.value && this.value.includes('@')) {
+                emailSaved = true;
+                // Silently save email via formspree
+                fetch('https://formspree.io/f/xqarldvz', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: this.value,
+                        _subject: 'KuHRjer - Email captured on blur',
+                        source: 'early_capture'
+                    })
+                }).catch(() => {}); // Silently fail
+            }
+        });
+    }
+
+    // Toggle form fields based on marketing consent
+    function toggleFormFields() {
+        const consent = document.getElementById('marketing-consent').checked;
+        const basicFields = document.getElementById('basic-fields');
+        const step1Btn = document.getElementById('step1-btn');
+        const fieldsInSection = basicFields.querySelectorAll('input, select, textarea');
+
+        if (consent) {
+            basicFields.style.opacity = '1';
+            basicFields.style.pointerEvents = 'auto';
+            step1Btn.disabled = false;
+            step1Btn.style.opacity = '1';
+            fieldsInSection.forEach(field => field.disabled = false);
+            // Re-init buggy inputs for newly enabled fields
+            initBuggyInputs();
+        } else {
+            basicFields.style.opacity = '0.5';
+            basicFields.style.pointerEvents = 'none';
+            step1Btn.disabled = true;
+            step1Btn.style.opacity = '0.5';
+            fieldsInSection.forEach(field => field.disabled = true);
+        }
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        initCountrySelect();
+        initBuggyInputs();
+        initEmailCapture();
+    });
 
     function showPaywall() {
+        paywallClicks++;
+
+        // Second click - show spinner then error
+        if (paywallClicks === 2) {
+            document.getElementById('paywall').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('loading').classList.add('show');
+            document.querySelectorAll('.form-step').forEach(s => s.style.display = 'none');
+
+            setTimeout(() => {
+                document.getElementById('loading').classList.remove('show');
+                showError('Błędna odpowiedź serwera, spróbuj za chwilę');
+                hidePaywall();
+            }, 2500);
+            return;
+        }
+
+        // Third or fifth click - allow closing
+        if (paywallClicks >= 3 && paywallClicks <= 5) {
+            canClosePaywall = true;
+        }
+        if (paywallClicks >= 5) {
+            canClosePaywall = true;
+        }
+
         document.getElementById('paywall').classList.add('active');
         document.body.style.overflow = 'hidden';
+        // Make sure form step 1 is visible
+        document.getElementById('form-step-1').style.display = 'block';
     }
 
     function hidePaywall() {
@@ -479,6 +723,13 @@
 
     function tryToClose() {
         closeAttempts++;
+
+        // If user has clicked paywall 3+ times, they can close more easily
+        if (canClosePaywall && closeAttempts >= 2) {
+            hidePaywall();
+            closeAttempts = 0;
+            return;
+        }
 
         const messages = [
             "Czy na pewno? Tracisz dostęp do EKSKLUZYWNYCH treści!",
@@ -501,8 +752,8 @@
     }
 
     function nextStep(step) {
-        // Validate current step (sometimes fail randomly)
-        if (Math.random() < 0.3 && step > 2) {
+        // Validate current step (sometimes fail randomly - reduced frequency)
+        if (Math.random() < 0.1 && step > 2) {
             const errors = [
                 "Błąd walidacji: Pole 'Drugie imię' zawiera niedozwolone znaki.",
                 "Sesja wygasła. Proszę odświeżyć stronę i zacząć od nowa.",
@@ -558,6 +809,9 @@
         document.getElementById('step1').classList.add('active');
         document.getElementById('nightmare-form').reset();
         document.getElementById('loading').classList.remove('show');
+        document.getElementById('form-success').style.display = 'none';
+        // Reset marketing consent state
+        toggleFormFields();
     }
 
     // Form submission handler
@@ -584,8 +838,24 @@
             return;
         }
 
-        // After multiple attempts, actually submit via formspree
+        // After multiple attempts, submit via fetch and show success message
+        e.preventDefault();
         document.getElementById('loading').classList.add('show');
+        document.getElementById('form-step-5').style.display = 'none';
+
+        const formData = new FormData(this);
+
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            document.getElementById('loading').classList.remove('show');
+            document.getElementById('form-success').style.display = 'block';
+        }).catch(error => {
+            document.getElementById('loading').classList.remove('show');
+            document.getElementById('form-success').style.display = 'block';
+        });
     });
 
     // Prevent escape key
@@ -609,6 +879,27 @@
             }, 5000);
         }
     }, 30000);
+
+    // A/B Testing for hero headline
+    const heroHeadlines = [
+        { red: "REKRUTERZY GO NIENAWIDZĄ!", rest: "Zbudował rozszerzenie Chrome, które automatycznie wypełnia formularze rekrutacyjne" },
+        { red: "JEDEN PROSTY TRIK!", rest: "Żeby nie przepisywać CV do formularza rekrutacyjnego" },
+        { red: "SYSTEMY ATS ZAGROŻONE!", rest: "Jedno kliknięcie, które zmienia wszystko" },
+        { red: "ATS-Y PŁONĄ!", rest: "Kandydat aplikuje szybciej niż rekruter odrzuca" },
+        { red: "KONIEC ERY PRZEPISYWANIA!", rest: "Programista z Małkini złamał system rekrutacji" },
+        { red: "PANIKA W HR!", rest: "Wykryli człowieka, który NIE PRZEPISUJE CV ręcznie" },
+        { red: "TO POWINNO BYĆ NIELEGALNE!", rest: "Jedna wtyczka i 200 pól wypełnia się samo" },
+        { red: "DZIAŁY HR W ROZSYPCE!", rest: "\"Skąd on ma tyle czasu na aplikowanie?!\"" }
+    ];
+
+    const heroVariant = Math.floor(Math.random() * heroHeadlines.length);
+    const heroSelected = heroHeadlines[heroVariant];
+
+    if (document.getElementById('hero-headline-red')) {
+        document.getElementById('hero-headline-red').textContent = heroSelected.red;
+        document.getElementById('hero-headline-rest').textContent = heroSelected.rest;
+        console.log("🔥 Hero A/B Test: Variant #" + (heroVariant + 1) + " - " + heroSelected.red);
+    }
     </script>
 </body>
 </html>
